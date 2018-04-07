@@ -1,5 +1,5 @@
 pkgname=libhybris
-pkgver=1.0_git20171109
+pkgver=1.0_git20180212
 pkgrel=1
 arch="armhf aarch64"
 url="https://github.com/libhybris/libhybris"
@@ -12,9 +12,7 @@ _rev=54dd4749706334882f9c404fca01a19f01325d07
 source="$pkgname-$_rev.tar.gz::https://github.com/libhybris/libhybris/archive/$_rev.tar.gz
 	0001-Make-libhybris-compile-with-musl.patch
 	0002-tests-Regression-test-for-EGL-glibc-TLS-conflict.patch
-	0003-Implement-X11-EGL-platform-based-on-wayland-code.patch
-	0004-mtk-test_hwcomposer-fix.patch
-	0005-dont-hardcode-libhardware-path.patch"
+	0003-Implement-X11-EGL-platform-based-on-wayland-code.patch"
 
 pkgdesc="libhybris allows to use bionic-based HW adaptations"
 subpackages="$pkgname-dev $pkgname-egl $pkgname-gles $pkgname-libwayland-egl:_wayland
@@ -148,8 +146,6 @@ dev() {
 }
 
 sha512sums="798360130e540d9dd29ec937b3d01a1b146881c45ec6a2dd1a599a0164d46886b58927d38575993b525a06e99fcc2dd46f020e70f7e5c7cc43258b840ae183f8  libhybris-54dd4749706334882f9c404fca01a19f01325d07.tar.gz
-065d0f4f5db08b0aa240672fed5a498c2fa05677c0c3c3929edb27ca6d2077ddb310f9a1d1dd3167c72edc4540c6cd6a6ee0aef36334fa78b132f3e19cd5a198  0001-Make-libhybris-compile-with-musl.patch
-c9a14fa22b2799cc2f8c4ac7103e6c5484a2d91e7a92c5361e7e6c8b372f378ccd39913e941796c4edabfa70dc2518141e48da8b61dd5c570679d182fc6c6ea0  0002-tests-Regression-test-for-EGL-glibc-TLS-conflict.patch
-6c5aca2213a5ef29973d717d3bb25b4c9c845c6614769e805cd3bdd4282f418a7dda17ad3382e09b45e83826b320339a520904a998a62797f32782b0a049fda6  0003-Implement-X11-EGL-platform-based-on-wayland-code.patch
-30a5fbee8bc6c6b5590cb0e8adbbced2fbea80d8ce094c2cf79a776deb3ba012489fc779d51157bb56e08daaacab68bb4333223dea791d72d583f79813bcd7a8  0004-mtk-test_hwcomposer-fix.patch
-88a26d6c56c2b3871fa2b6c724180846d03482b0a25e7fec45c69f48ed530b7c8a253987e6ece95cdebbad79fd981e8ed4c69f796e2130b91c09fd04bfc3513e  0005-dont-hardcode-libhardware-path.patch"
+9655816dc3d89f329801a74f4499c3752cbc96f7ba2e052765335a2cbd7e74cdf45064260ab27537bcd9d64673144eac6f89e31af4b4c6b4a4792ad7b398555d  0001-Make-libhybris-compile-with-musl.patch
+1355a4403d1af8bdf75b9e4502cbfc093b9788224ce7c24a1f6a53dd7996d385d31a3362577a4293db6b6d0dd0ae4e88140b38c658ff0a288d9acfc2753859bb  0002-tests-Regression-test-for-EGL-glibc-TLS-conflict.patch
+f7d7b460af5f13c37289d7eadfa5eb52248a4a5379a1da07b74231eb4fc9c1ccda6644bcd39bbae89bd068d7f3f6c5fe4e9ae6b41991c1f3b48d6b4d59d951d8  0003-Implement-X11-EGL-platform-based-on-wayland-code.patch"
