@@ -1,29 +1,28 @@
 pkgname=android-headers-4.4
+_pkgname=android-headers
 pkgver=4.4
 pkgrel=0
 arch="noarch"
+url="https://github.com/ubports/android-headers"
 license="Apache"
-makedepends="rpmextract"
+makedepends=""
 depends=""
-url="https://github.com/mer-hybris"
-_filename="droid-hal-maserati-devel-0.0.6-201712261302.armv7hl.rpm"
-source="http://repo.merproject.org/obs/nemo:/devel:/hw:/motorola:/maserati/sailfishos_2.1.0.11/armv7hl/$_filename
-        android-headers.pc"
+_rev=f636fa26a61b36bef284a7aeba95eb767344b8b4
+source="$pkgname-$_rev.tar.gz::https://github.com/ubports/android-headers/archive/$_rev.tar.gz
+	android-headers.pc"
 pkgdesc="Android headers used for building libhybris"
 options="!check"
 
-builddir="$srcdir/android-headers"
+builddir="$srcdir/$_pkgname-$_rev"
 
 package() {
-  mkdir -p "$builddir"
-  cd "$builddir"
-  rpmextract.sh ../$_filename
+	cd "$builddir"
 
-  mkdir -p "${pkgdir}/usr/include"
-  cp -r "usr/lib/droid-devel/droid-headers" "${pkgdir}/usr/include/android-$pkgver"
+	mkdir -p "${pkgdir}/usr/include"
+	cp -r "$builddir/19" "${pkgdir}/usr/include/android-$pkgver"
 
-  install -Dm644 "$srcdir/android-headers.pc" "${pkgdir}/usr/lib/pkgconfig/android-headers-$pkgver.pc"
+	install -Dm644 "$srcdir/android-headers.pc" "${pkgdir}/usr/lib/pkgconfig/android-headers-$pkgver.pc"
 }
 
-sha512sums="0e941021a1bd3f5aec940596abcc11e6d67bcd845672c8197a870c5a718b035f9eecea789fc7cc7b6321642713daa7d32955f1f7f6f547f7850872b0691e73f6  droid-hal-maserati-devel-0.0.6-201712261302.armv7hl.rpm
+sha512sums="c146753908ae0dd9aca0138a0a63e8578d65200d6d9b5154b846a0ac3309d9e33f6edddd92cd420e7b7dcaf73630546eb1bd45927cf8b4921f67dec7db7bb55c  android-headers-4.4-f636fa26a61b36bef284a7aeba95eb767344b8b4.tar.gz
 331f2670da9ce2690225694196265a55e2f41c35a1a12b71a75de3478b3b266c215be9bd451ab5ea13d4802e9f7d4e1bab8aa006d0df81fc264b2a132a022640  android-headers.pc"

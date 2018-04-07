@@ -1,7 +1,7 @@
 pkgname=android-headers-7.1
 _pkgname=android-headers
 pkgver=7.1
-pkgrel=1
+pkgrel=0
 arch="noarch"
 url="https://github.com/Halium/android-headers"
 license="Apache"
