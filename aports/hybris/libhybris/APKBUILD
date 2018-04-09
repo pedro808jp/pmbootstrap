@@ -5,8 +5,8 @@ arch="armhf aarch64"
 url="https://github.com/libhybris/libhybris"
 license="Apache"
 makedepends="autoconf automake libtool wayland-dev linux-headers bsd-compat-headers
-             libx11-dev libxcb-dev libxext-dev
-             android-headers-7.1 android-headers-7.1-caf android-headers-4.4"
+	libx11-dev libxcb-dev libxext-dev
+	android-headers-7.1 android-headers-7.1-caf android-headers-4.4"
 depends_dev="bsd-compat-headers android-headers-7.1"
 _rev=54dd4749706334882f9c404fca01a19f01325d07
 source="$pkgname-$_rev.tar.gz::https://github.com/libhybris/libhybris/archive/$_rev.tar.gz
@@ -49,14 +49,14 @@ build() {
 	NOCONFIGURE=1 ./autogen.sh
 
 	if [ "$CARCH" == "armhf" ]; then
-        _vers="7.1 7.1-caf 4.4"
-        _ldpath="/usr/libexec/droid-hybris/system/lib:/vendor/lib:/system/lib"
-        _arch="arm"
+		_vers="7.1 7.1-caf 4.4"
+		_ldpath="/usr/libexec/droid-hybris/system/lib:/vendor/lib:/system/lib"
+		_arch="arm"
 	elif [ "$CARCH" == "aarch64" ]; then
-        _vers="7.1 7.1-caf"
-        _ldpath="/usr/libexec/droid-hybris/system/lib64:/vendor/lib64:/system/lib64"
-        _arch="arm64"
-    fi
+		_vers="7.1 7.1-caf"
+		_ldpath="/usr/libexec/droid-hybris/system/lib64:/vendor/lib64:/system/lib64"
+		_arch="arm64"
+	fi
 
 	for _headers_ver in $_vers; do
 		msg "building $pkgname-$_headers_ver"
