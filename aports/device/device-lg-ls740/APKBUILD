@@ -1,0 +1,22 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname="device-lg-ls740"
+pkgdesc="LG Volt"
+pkgver=0.1
+pkgrel=0
+url="https://postmarketos.org"
+license="MIT"
+arch="noarch"
+options="!check"
+depends="postmarketos-base linux-lg-ls740 mkbootimg mesa-dri-swrast"
+makedepends="devicepkg-dev"
+source="deviceinfo"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="2a3dd34082d055feae9dc693d0eb1699e38980ac840dafb0f4da1427b0db42220dd4e546ba9ac08c97f63a150693305bc0ea6ddf49cd925c412a6a471261a36e  deviceinfo"
